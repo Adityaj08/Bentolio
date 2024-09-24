@@ -457,7 +457,7 @@ if(window.innerWidth < 673){
         duration: 1,
         opacity: 0,
         scrollTrigger: {
-            trigger: ".current-project-image",
+            trigger: ".projects",
             start: "top 60%",
             end: "80% bottom",
             scrub: 2
