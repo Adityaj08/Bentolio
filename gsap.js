@@ -458,8 +458,7 @@ if(window.innerWidth < 673){
         scrollTrigger: {
             trigger: ".projects",
             start: "top 60%",
-            end: "80% bottom",
-            scrub: 2
+            end: "80% bottom"
         },
         ease: "power2.inOut",
     }, "start").from(".project-list li p", {
