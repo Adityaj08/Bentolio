@@ -1,0 +1,535 @@
+:root{
+    --primary-light: #FADCD9;
+    --secondary-light: #F8AFA6;
+    --background-light: #F9F1F0;
+    --text-light-mode: #000000;
+    --border-radius: 20px;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@font-face {
+    font-family: Monsterrat-italic;
+    src: url(./assets/fonts/Montserrat-LightItalic.ttf);
+}
+@font-face {
+    font-family: Monsterrat-bold;
+    src: url(./assets/fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: Monsterrat-light;
+    src: url(./assets/fonts/Montserrat-Light.ttf);
+}
+@font-face {
+    font-family: Monsterrat-medium;
+    src: url(./assets/fonts/Montserrat-MediumItalic.ttf);
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--text-light-mode);
+    color: var(--text-light-mode);
+    overflow: hidden;
+}
+
+.preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--text-light-mode);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.preloader h2{
+    font-size: 3rem;
+    font-family: 'Monsterrat-bold', sans-serif;
+    color: #fff;
+}
+
+.navbar{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin: 20px;
+    background-color: var(--primary-light);
+    border-radius: var(--border-radius);
+}
+
+.mobile-navbar-links{
+    display: none;
+}
+
+.navbar .logo{
+    font-size: 1.5rem;
+    font-family: 'Monsterrat-italic', sans-serif;
+}
+
+.navbar .logo span{
+    font-family: 'Monsterrat-bold', sans-serif;
+}
+
+.navbar .nav-links{
+    display: flex;
+    gap: 80px;
+}
+
+.navbar .nav-links a{
+    font-size: 1.5rem;
+    font-family: 'Monsterrat-light', sans-serif;
+    color: var(--text-light-mode);
+}
+
+.mobile-navbar-btn{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: none;
+    background: #000;
+    z-index: 999;
+    cursor: pointer;
+}
+
+#mobile-navbar-icon, #mobile-navbar-icon-close{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding: 0.4rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#mobile-navbar-icon-close{
+    display: none;
+    cursor: pointer;
+}
+
+
+.hero{
+    height: 80vh;
+    width: 100%;
+}
+
+.hero .container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 0 20px 20px 20px;
+}
+
+.hero .container .left{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1.75fr 1.25fr;
+    gap: 20px;
+}
+
+.hero .container .left .top{
+    display: flex;
+    gap: 20px;  
+}
+
+.hero .container .left .top .cardIntro{
+    height: 100%;
+    width: 75%;
+    background-color: var(--primary-light);
+    border-radius: var(--border-radius);
+    padding: 20px;
+}
+
+.hero .container .left .top .cardIntro .vector-span{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.hero .container .left .top .cardIntro .vector-span img{
+    animation: rotate 20s linear infinite forwards;
+    animation-delay: -2s;
+}
+.hero .container .left .top .cardIntro h2{
+    font-size: 2.5rem;
+    font-family: 'Monsterrat-bold', sans-serif;
+}
+
+.hero .container .left .top .cardIntro h2 span{
+    font-family: 'Monsterrat-italic', sans-serif;
+}
+
+.hero .container .left .top .portrait{
+    height: 100%;
+    width: 25%;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    z-index: 3;
+    cursor: pointer;
+}
+
+.hero .container .left .top .portrait img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 500ms transform ease;
+}
+.hero .container .left .top .portrait:hover img{
+    transform: scale(1.1);
+}
+.hero .container .left .bottom{
+    display: flex;
+    gap: 20px;
+    z-index: 1;
+}
+
+.hero .container .left .bottom .about, .contact{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-light);
+    border-radius: var(--border-radius);
+    padding: 20px;
+}
+
+.hero .container .left .bottom .contact{
+    background-color: var(--secondary-light);
+}
+
+.hero .container .left .bottom .about .star-span{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.hero .container .left .bottom .about h2{
+    font-size: 1.5rem;
+    font-family: 'Monsterrat-light', sans-serif;
+}
+
+.hero .container .left .bottom .about h2 span, .contact h2 span{
+    font-family: 'Monsterrat-medium', sans-serif;
+    padding: 0 3px;
+}
+
+
+.hero .container .left .bottom .contact .contact-text{
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+}
+.hero .container .left .bottom .contact .contact-text p{
+    font-size: 1.3rem;
+    font-family: 'Monsterrat-light', sans-serif;
+}
+
+.hero .container .left .bottom .contact .contact-text img{
+    height: 50px;
+    width: 50px;
+}
+.hero .container .left .bottom .contact a{
+    color: var(--text-light-mode);
+    font-size: 3.2rem;
+    font-family: 'Monsterrat-light', sans-serif;
+    cursor: pointer;
+}
+.hero .container .left .bottom .contact h2{
+    font-size: 1.5rem;
+    font-family: 'Monsterrat-light', sans-serif;
+}
+
+
+.hero .container .right{
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.hero .container .right .projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 85%;
+    width: 100%;
+    background-color: var(--primary-light);
+    border-radius: var(--border-radius);
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.hero .container .right .projects .current-project{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.hero .container .right .projects .current-project .project-name{
+    font-size: 1.5rem;
+    font-family: 'Monsterrat-light', sans-serif;
+    cursor: pointer;
+}
+
+.hero .container .right .projects .current-project .links{
+    display: flex;
+    gap: 20px;
+}
+
+.hero .container .right .projects .current-project .links img{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    transition: 500ms transform ease;
+}
+.hero .container .right .projects .current-project .links img:hover{
+    transform: scale(1.1);
+}
+.hero .container .right .projects .img-div{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.hero .container .right .projects .img-div img{
+    height: 100%;
+    width: 100%;
+    transition: 500ms transform ease;
+}
+
+.hero .container .right .projects .img-div:hover img{
+    transform: scale(1.1);
+}
+.hero .container .right .projects .other-projects .project-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hero .container .right .projects .other-projects .project-list li p{
+    font-size: 1.6rem;
+    font-family: 'Monsterrat-light', sans-serif;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.hero .container .right .socials{
+    height: 20%;
+    width: 100%;
+    padding-top: 20px;
+    background-color: var(--primary-light);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    z-index: 1;
+}
+
+.hero .container .right .socials .social-links{
+    height: 100%;
+    width: 100%;
+    display: flex;  
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero .container .right .socials .social-links a{
+    font-size: 1.5rem;
+    font-family: 'Monsterrat-bold', sans-serif;
+    color: var(--text-light-mode);
+}
+
+@media screen and (max-width: 1392px) {
+    .hero .container{
+        display: block;
+        height: auto;
+    }
+
+    .hero .container .right{
+        padding-top: 20px;
+        padding-left: 0;
+    }
+    .hero .container .left .top .cardIntro{
+        width: 70%;
+    }
+    .hero .container .left .top .portrait{
+        width: 30%;
+    }
+    .hero .container .left .bottom .contact h2{
+        font-size: 1.2rem;
+    }
+    .hero .container .right .projects{
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 673px) and (max-width: 850px){
+    .hero .container .right .projects .img-div{
+        height: 350px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1392px){
+    .hero .container .right .projects .img-div{
+        height: 450px;
+        object-fit: cover;
+    }
+    .hero .container .right .projects .img-div  img{
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 673px) {
+    
+    .navbar{
+        display: flex;
+        justify-content: center;
+    }
+    .navbar .nav-links{
+        display: none;
+    }
+    .mobile-navbar-links{
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 100%;   
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 20px;
+        padding-bottom: 150px;
+        z-index: 999;
+        background-color: #000000;
+        transition: 800ms left ease;
+        overflow: hidden;
+    }
+
+     .mobile-navbar-links.active{
+        left: 0;   
+        filter: opacity(100%);
+    }
+    .mobile-navbar-btn{
+        display: block;
+    }
+    .mobile-navbar-btn.active #mobile-navbar-icon-close{
+        display: flex;
+        z-index: 999;
+    }
+    .mobile-navbar-btn.active #mobile-navbar-icon{
+        display: none;
+    }
+    .mobile-navbar-links a{
+        padding:0 20px;
+        color: #fff;
+        font-size: 5rem;
+        font-family: 'Monsterrat-medium', sans-serif;
+    }
+    .mobile-navbar-links a:hover{
+        color: rgb(20, 20, 255);
+    }
+    .hero .container .left{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .hero .container .left .top{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .hero .container .left .top .cardIntro,.hero .container .left .top .portrait{
+        width: 100%;
+    }
+    .hero .container .left .bottom .about, .contact{
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 579px){
+    .hero .container .left .bottom{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .hero .container .left .bottom .about, .contact{
+        height: 300px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 473px){
+    .hero .container .left .top .cardIntro h2,.hero .container .left .bottom .contact a{
+        font-size: 2.2rem;
+    }
+    .hero .container .left .bottom .contact h2{
+        font-size: 1rem;
+    }
+    .hero .container .left .bottom .about h2{
+        font-size: 1.3rem;
+    }
+    .hero .container .right .projects .current-project .project-name, .hero .container .right .projects .other-projects .project-list li p{
+        font-size: 1.2rem;
+    }
+    .hero .container .left .bottom .about h2 span{
+        font-size: 1.3rem;
+    }
+    .hero .container .right .socials .social-links a{
+        font-size: 0.7rem;
+    }
+}   
+@media screen and (max-width: 376px){
+    .hero .container .right .projects .current-project .project-name, .hero .container .right .projects .other-projects .project-list li p{
+        font-size: 1rem;
+    }
+    .hero .container .right .projects .img-div{
+        height: 150px;
+        object-fit: cover;
+    }
+    .mobile-navbar-links a{
+        font-size: 4rem;
+    }
+}
