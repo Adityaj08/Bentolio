@@ -455,12 +455,7 @@ if(window.innerWidth < 673){
         delay: 1,
         duration: 1,
         opacity: 0,
-        scrollTrigger: {
-            trigger: ".projects",
-            start: "top 60%",
-            end: "80% bottom"
-        },
-        ease: "power2.inOut",
+        ease: "power2.inOut"
     }, "start").from(".project-list li p", {
         delay: 1,
         duration: 1,
