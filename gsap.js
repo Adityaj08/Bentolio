@@ -273,7 +273,7 @@ if(window.innerWidth > 673 && window.innerWidth < 1392){
         duration: 1,
         opacity: 0,
         scrollTrigger: {
-            trigger: ".current-project-image",
+            trigger: ".projects",
             start: "top 60%",
             end: "80% bottom",
             scrub: 2
@@ -286,7 +286,7 @@ if(window.innerWidth > 673 && window.innerWidth < 1392){
         y: 20,
         stagger: 1,
         scrollTrigger: {
-            trigger: ".current-project-image",
+            trigger: ".projects",
             start: "top 60%",
             end: "80% bottom",
             scrub: 2
@@ -311,8 +311,7 @@ if(window.innerWidth > 673 && window.innerWidth < 1392){
         scrollTrigger: {
             trigger: ".socials",
             start: "top bottom",
-            end: "50% 90%",
-            scrub: 2
+            end: "50% 90%"
         },
         ease: "power2.inOut",
         },"start");
