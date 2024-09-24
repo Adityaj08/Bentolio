@@ -462,13 +462,7 @@ if(window.innerWidth < 673){
         opacity: 0,
         y: 20,
         stagger: 1,
-        scrollTrigger: {
-            trigger: ".current-project-image",
-            start: "top 60%",
-            end: "80% bottom",
-            scrub: 2
-        },
-        ease: "power2.inOut",
+        ease: "power2.inOut"
     }, "start");
 }
 
